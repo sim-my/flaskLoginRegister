@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %} Login {% endblock %}
+
+{% block content %}
+    <div style="width: 20rem;">
+        <form action="/login" method="POST">
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" class="form-control" name="email" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" name="password" required>
+                  </div>
+                  {% if message %}
+                  <p class="text-center text-danger">{{message}}</p>
+                  {% endif %}
+                  <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                  </div>
+                  <h5 class="text-center">OR</h5>
+                  <div class="form-group text-center">
+                    <a href="/register"><button type="button" class="btn btn-success">Register</button></a>
+                  </div>
+            </form>
+        </div>
+{% endblock %}
